@@ -10,7 +10,7 @@ const useGetAllAppliedJobs = () => {
   useEffect(() =>{
     const getAllAppliedJobs = async() =>{
       try {
-        const res = await axios.get("http://localhost:3000/api/v1/application/get", {
+        const res = await axios.get("https://career-path-hqsu.onrender.com/api/v1/application/get", {
           headers: {
             "Content-Type": "application/json",
           },

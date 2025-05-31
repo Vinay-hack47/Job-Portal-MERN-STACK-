@@ -9,7 +9,7 @@ const useGetAllCompanies = () => {
   useEffect(() =>{
     const getAllCompanies = async() =>{
       try {
-        const res = await axios.get("http://localhost:3000/api/v1/company/get", {
+        const res = await axios.get("https://career-path-hqsu.onrender.com/api/v1/company/get", {
           headers: {
             "Content-Type": "application/json",
           },

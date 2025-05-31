@@ -9,7 +9,7 @@ const useGetSingleCompanyById = (companyId) => {
   useEffect(() =>{
     const getSingleCompanyById = async() =>{
       try {
-        const res = await axios.get(`http://localhost:3000/api/v1/company/get/${companyId}`, {
+        const res = await axios.get(`https://career-path-hqsu.onrender.com/api/v1/company/get/${companyId}`, {
           headers: {
             "Content-Type": "application/json",
           },

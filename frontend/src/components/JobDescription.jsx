@@ -39,7 +39,7 @@ const JobDescription = () => {
   const applyJobHandler = async () =>{
     
     try {
-      const res = await axios.post(`http://localhost:3000/api/v1/application/apply/${jobId}`,{},{
+      const res = await axios.post(`https://career-path-hqsu.onrender.com/api/v1/application/apply/${jobId}`,{},{
         withCredentials: true,
       })
       
@@ -58,7 +58,7 @@ const JobDescription = () => {
   useEffect(() => {
     const getJobById = async () =>{
       try {
-        const res = await axios.get(`http://localhost:3000/api/v1/job/get/${jobId}`, {
+        const res = await axios.get(`https://career-path-hqsu.onrender.com/api/v1/job/get/${jobId}`, {
           headers: {
             "Content-Type": "application/json",
           },

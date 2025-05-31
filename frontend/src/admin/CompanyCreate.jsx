@@ -28,7 +28,7 @@ const CompanyCreate = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:3000/api/v1/company/register",
+        "https://career-path-hqsu.onrender.com/api/v1/company/register",
         { companyName },
         {
           headers: {

@@ -38,7 +38,7 @@ const JobSetup = () => {
     try {
       setLoading(true);
 
-      const res = await axios.post(`http://localhost:3000/api/v1/job/post/${jobId}`, input,{
+      const res = await axios.post(`https://career-path-hqsu.onrender.com/api/v1/job/post/${jobId}`, input,{
         headers: {
           "Content-Type": "application/json",
         },

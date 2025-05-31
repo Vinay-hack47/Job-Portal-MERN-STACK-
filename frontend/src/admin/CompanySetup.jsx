@@ -54,7 +54,7 @@ const CompanySetup = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:3000/api/v1/company/update/${companyId}`,
+        `https://career-path-hqsu.onrender.com/api/v1/company/update/${companyId}`,
         updatedData,
         {
           headers: {

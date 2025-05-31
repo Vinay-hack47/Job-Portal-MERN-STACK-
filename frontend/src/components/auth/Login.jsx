@@ -34,7 +34,7 @@ const Login = () => {
 
     try {
       dispatch(setLoading(true))
-      const res = await axios.post("http://localhost:3000/api/v1/user/login", inputData, {
+      const res = await axios.post("https://career-path-hqsu.onrender.com/api/v1/user/login", inputData, {
         headers: {
           "Content-Type": "application/json",
         },

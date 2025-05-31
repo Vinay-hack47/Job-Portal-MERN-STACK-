@@ -39,7 +39,7 @@ const SignUp = () => {
 
     try {
       setLoading(true)
-      const res = await axios.post("http://localhost:3000/api/v1/user/register", inputData, {
+      const res = await axios.post("https://career-path-hqsu.onrender.com/api/v1/user/register", inputData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

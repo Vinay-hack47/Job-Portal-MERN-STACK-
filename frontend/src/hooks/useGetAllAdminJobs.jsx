@@ -10,7 +10,7 @@ const useGetAllAdminJobs = () => {
   useEffect(() =>{
     const getAllAdminJobs = async() =>{
       try {
-        const res = await axios.get("http://localhost:3000/api/v1/job/getadminjobs", {
+        const res = await axios.get("https://career-path-hqsu.onrender.com/api/v1/job/getadminjobs", {
           headers: {
             "Content-Type": "application/json",
           },

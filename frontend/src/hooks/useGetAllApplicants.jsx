@@ -11,7 +11,7 @@ const useGetAllApplicants = (jobId) => {
   useEffect(() =>{
     const getAllApplicants= async() =>{
       try {
-        const res = await axios.get(`http://localhost:3000/api/v1/application/${jobId}/applicants`, {
+        const res = await axios.get(`https://career-path-hqsu.onrender.com/api/v1/application/${jobId}/applicants`, {
           headers: {
             "Content-Type": "application/json",
           },

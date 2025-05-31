@@ -44,7 +44,7 @@ const UpdateProfile = ({ open, setOpen }) => {
 
     try {
       setLoading(true);
-      const res = await axios.put("http://localhost:3000/api/v1/user/profile/update", updatedData, {
+      const res = await axios.put("https://career-path-hqsu.onrender.com/api/v1/user/profile/update", updatedData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

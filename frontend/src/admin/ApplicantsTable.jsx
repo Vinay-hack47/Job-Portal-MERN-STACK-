@@ -15,7 +15,7 @@ const ApplicantsTable = () => {
   const { allApplicants } = useSelector((store) => store.applicants);
 
   const statusHandler = async(status, id) =>{
-    const res = await axios.put(`http://localhost:3000/api/v1/application/status/${id}/update`, {status},{
+    const res = await axios.put(`https://career-path-hqsu.onrender.com/api/v1/application/status/${id}/update`, {status},{
       headers:{
         "Content-Type" : "application/json",
       },
