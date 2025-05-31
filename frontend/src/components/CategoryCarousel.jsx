@@ -3,23 +3,27 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Button } from './ui/button';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-// import { setSearchedQuery } from '@/redux/jobSlice';
+import { setFilterJobByText } from '@/redux/jobSlice';
 
 const category = [
+    "FullStack Developer",
+    "Software Developer",
+    "AI Engineer",
     "Frontend Developer",
     "Backend Developer",
     "Data Science",
     "Graphic Designer",
-    "FullStack Developer"
 ]
 
 const CategoryCarousel = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const searchJobHandler = (query) => {
-        dispatch(setSearchedQuery(query));
-        navigate("/browse");
-    }
+
+
+     const searchJobHandler = (query) => {
+        dispatch(setFilterJobByText(query));
+        navigate('/browse');
+      }
 
     return (
         <div>

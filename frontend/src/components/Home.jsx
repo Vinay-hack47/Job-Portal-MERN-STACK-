@@ -29,3 +29,4 @@ const Home = () => {
 }
 
 export default Home
+// onClick={() => navigate(`/description/${job?._id}`)}

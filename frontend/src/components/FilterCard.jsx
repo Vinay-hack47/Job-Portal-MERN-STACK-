@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 import { Label } from './ui/label';
+import { useDispatch } from 'react-redux';
+import { setFilterCompany } from '@/redux/companySlice';
 
 const jobFilters = [
   {
@@ -8,10 +10,11 @@ const jobFilters = [
     options: [
       "Remote",
       "New York",
+      "Ahemdabad",
+      "Mumbai", 
+      "India",
       "San Francisco",
       "London",
-      "Berlin",
-      "Toronto",
     ]
   },
   {
@@ -38,24 +41,38 @@ const jobFilters = [
   }
 ];
 
-
+ 
 const FilterCard = () => {
+
+  const [filterData, setFilterData] = useState("")
+  const dispatch = useDispatch();
+
+  const changeHandler = (value) =>{
+    setFilterData(value);
+  }
+    
+  useEffect(() => {
+    dispatch(setFilterCompany(filterData));
+  },[filterData])
+
+
   return (
     <div className=''>
       <h1 className='font-bold mb-4'>Filter Jobs</h1>
 
       <div>
-        <RadioGroup>
+        <RadioGroup value={filterData} onValueChange={changeHandler}>
           {
             jobFilters.map((data, index) => (
               <div key={index}>
                 <h1 className='font-medium mb-2'>{data.label}</h1>
                 {
-                  data.options.map((item, index) => {
+                  data.options.map((item, idx) => {
+                    const itemId = `id${index}-${idx}`
                     return (
-                      <div className='flex gap-3 p-1' key={index}>
-                        <RadioGroupItem value={item}></RadioGroupItem>
-                        <Label>{item}</Label>
+                      <div className='flex gap-3 p-1' key={idx}>
+                        <RadioGroupItem value={item} id={itemId} ></RadioGroupItem>
+                        <Label htmlFor={itemId}>{item}</Label>
                       </div>
                     )
                   })

@@ -6,7 +6,6 @@ import { Badge } from './ui/badge'
 import { useNavigate } from 'react-router-dom'
 
 const Job = ({ job }) => {
-  console.log(job);
 
 
   // const jobId = "1234567890";

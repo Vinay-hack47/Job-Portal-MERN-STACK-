@@ -89,20 +89,16 @@ export const getCompanyById = async (req, res) => {
 export const updateCompany = async (req, res) => {
   try {
     const companyId = req.params.id;
-    console.log("companyId", companyId);
     
     const { companyName, description, website, location } = req.body;
-    console.log(companyName, description, website, location);
 
     const file = req.file;
-    console.log("file", file);
 
     let cloudResponse;
     let logoUrl;
 
     if(file){
       const fileUri = getDataUri(file);
-      console.log("fileUri", fileUri);
       // idhar cloudinary ka code dalna hai
       cloudResponse = await cloudinary.uploader.upload(fileUri.content);
       logoUrl = cloudResponse.secure_url;
@@ -117,7 +113,6 @@ export const updateCompany = async (req, res) => {
       location,
       ...(logoUrl && { logo: logoUrl }), // only add logo if available
     };
-    console.log("updatedData", updatedData);
 
     const updatedCompany = await Company.findByIdAndUpdate(
       companyId,

@@ -11,7 +11,6 @@ import { setSearchCompanyByText } from '@/redux/companySlice'
 const Companies = () => {
 
   const [input, setInput] = useState("");
-  console.log("input", input);
   
   const navigate = useNavigate();
   const dispatch = useDispatch();

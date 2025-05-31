@@ -50,14 +50,14 @@ import { useNavigate } from 'react-router-dom';
 import { setFilterJobByText } from '@/redux/jobSlice';
 
 const HeroSection = () => {
-  // const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const searchJobHandler = () => {
-  //   dispatch(setFilterJobByText(query));
-  //   navigate('/browse');
-  // }
+  const searchJobHandler = () => {
+    dispatch(setFilterJobByText(query));
+    navigate('/browse');
+  }
 
   return (
     <div className="text-center">
@@ -79,10 +79,10 @@ const HeroSection = () => {
           <input
             type="text"
             placeholder="Search jobs by title, company, or keyword"
-            onChange={(e) => dispatch(setFilterJobByText(e.target.value))}
+            onChange={(e) => setQuery(e.target.value)}
             className="outline-none border-none w-full text-sm py-3"
           />
-          <Button onClick={() => navigate("/browse")} className="rounded-r-full bg-[#1447e6] cursor-pointer">
+          <Button onClick={searchJobHandler} className="rounded-r-full bg-[#1447e6] cursor-pointer">
             <Search className="h-5 w-5 text-white" />
           </Button>
         </div>

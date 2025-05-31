@@ -15,6 +15,7 @@ import AdminJobs from './admin/AdminJobs'
 import JobCreate from './admin/JobCreate'
 import JobSetup from './admin/JobSetup'
 import Applicants from './admin/Applicants'
+import ProtectedRoute from './admin/ProtectedRoute'
 
 
 
@@ -52,11 +53,11 @@ const App = () => {
     //todo Yaha se admin routes start honge
     {
       path: "/admin/companies",
-      element: <Companies></Companies>
+      element: <ProtectedRoute><Companies></Companies></ProtectedRoute>
     },
     {
       path: "/admin/companies/create",
-      element: <CompanyCreate></CompanyCreate>
+      element: <ProtectedRoute><CompanyCreate></CompanyCreate></ProtectedRoute>
     },
     {
       path: "/admin/companies/create/:id",

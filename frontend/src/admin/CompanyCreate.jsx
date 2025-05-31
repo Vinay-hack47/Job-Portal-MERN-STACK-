@@ -38,7 +38,6 @@ const CompanyCreate = () => {
         });
 
       if (res.data.success) {
-        console.log(res.data);
         
         const companyId = res?.data?.newCompany?._id;
         navigate(`/admin/companies/create/${companyId}`);

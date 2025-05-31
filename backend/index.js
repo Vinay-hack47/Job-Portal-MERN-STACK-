@@ -7,13 +7,15 @@ import userRouter from "./router/user.route.js"
 import companyRouter from "./router/company.route.js";
 import jobRouter from "./router/job.route.js";
 import applicationRouter from "./router/application.route.js";
+import path from "path";
 
 
 dotenv.config();
 const app = express();
-
 const PORT = 3000; 
 connectDB();
+
+const __dirname = path.resolve();
 
 
 //middleware
@@ -32,6 +34,11 @@ app.use("/api/v1/company", companyRouter);
 app.use("/api/v1/job", jobRouter);
 app.use("/api/v1/application", applicationRouter);
 
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.get("/{*any}", (_,res) =>{
+  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+})
+
 app.listen(PORT, () =>{
   console.log(`Server is running on port ${PORT}`);
-})
+});

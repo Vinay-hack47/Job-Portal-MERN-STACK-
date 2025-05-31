@@ -51,7 +51,6 @@ const CompanySetup = () => {
     updatedData.append("location", input.location);
     if (input.file) updatedData.append("file", input.file);          
     //todo If we are updating the image/pdf(logo), we need to append it to the form data , and in that "file" -this should be same as in backed multer
-    console.log("updatedData", updatedData);
 
     try {
       const res = await axios.put(

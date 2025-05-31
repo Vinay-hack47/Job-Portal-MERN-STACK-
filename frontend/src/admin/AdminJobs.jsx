@@ -17,7 +17,6 @@ const AdminJobs = () => {
   const jobId = allAdminJobs?.map((job) => job?._id);
 
   const [input, setInput] = useState("");
-  console.log("input", input);
   
   const navigate = useNavigate();
   const dispatch = useDispatch();

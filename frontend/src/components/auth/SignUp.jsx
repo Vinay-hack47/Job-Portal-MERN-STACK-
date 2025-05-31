@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../shared/Navbar'
 import { Label } from '../ui/label'
 import { Input } from '../ui/input'
@@ -22,9 +22,8 @@ const SignUp = () => {
     role: "",
     file: null
   });
-  console.log(inputData);
 
-
+  const {user} = useState((store) => store.auth);
   const navigate = useNavigate();
 
   const changeHandler = (e) => {
@@ -46,7 +45,6 @@ const SignUp = () => {
         },
         withCredentials: true
       })
-      console.log(res.data);
       if (res.data.success) {
         toast.success(res.data.message)
         navigate("/login")
@@ -60,6 +58,12 @@ const SignUp = () => {
       setLoading(false)
     }
   }
+
+  useEffect(() =>{
+      if(user){
+        navigate("/")
+      }
+    })
 
   return (
     <div>

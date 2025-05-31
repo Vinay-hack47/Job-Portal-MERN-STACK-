@@ -44,7 +44,6 @@ const JobSetup = () => {
         },
         withCredentials: true,
       })
-      console.log("res", res.data);
       
       if(res.data.success){
         toast.success(res.data.message);

@@ -2,12 +2,14 @@ import React from 'react'
 import LatestJobCards from './LatestJobCards'
 import useGetAllJobs from '@/hooks/useGetAllJobs'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const LatestJobs = () => {
 
 
   // const cardsArray = [1, 2, 3, 4, 5, 6, 7, 8]
   useGetAllJobs();
+  const navigate = useNavigate();
 
   const {allJobs} = useSelector((store) => store.job);
   return <>
@@ -19,7 +21,7 @@ const LatestJobs = () => {
 
       {
         allJobs.slice(0, 6).map((job, index) =>
-          <LatestJobCards job={job}></LatestJobCards>
+          <LatestJobCards job = {job}></LatestJobCards>
         )}
     </div>
   </>
