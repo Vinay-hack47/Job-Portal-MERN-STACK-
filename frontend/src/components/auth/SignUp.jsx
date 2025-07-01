@@ -9,6 +9,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { Loader2 } from 'lucide-react'
+import { useSelector } from 'react-redux'
 
 const SignUp = () => {
 
@@ -23,7 +24,7 @@ const SignUp = () => {
     file: null
   });
 
-  const {user} = useState((store) => store.auth);
+  const {user} = useSelector((store) => store.auth);
   const navigate = useNavigate();
 
   const changeHandler = (e) => {
